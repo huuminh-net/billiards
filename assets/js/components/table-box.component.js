@@ -45,7 +45,12 @@ parasails.registerComponent('tableBox', {
       var tbPrice = parseInt(this.table.price, 10);
       let hPrice = hours * tbPrice;
       let mPrice = (minutes / 60) * tbPrice;
-      this.price = this.calculatePrice(hPrice + mPrice);
+      let tPrice = Math.ceil(hPrice + mPrice);
+
+      if(tPrice < 1000) {
+        tPrice = 1000;
+      } 
+      this.price = this.calculatePrice(tPrice);
     }
   },
 

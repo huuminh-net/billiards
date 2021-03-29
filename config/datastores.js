@@ -49,7 +49,7 @@ module.exports.datastores = {
     *                                                                          *
     ***************************************************************************/
     adapter: 'sails-mysql',
-    url: 'mysql://minh:candidate@localhost:3306/billiards',
+    url: 'mysql://root@localhost:3306/billiards',
   },
 
 

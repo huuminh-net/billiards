@@ -8,6 +8,7 @@
     "@sailshq/connect-redis": "^3.2.1",
     "@sailshq/lodash": "^3.10.3",
     "@sailshq/socket.io-redis": "^5.2.0",
+    "@sailshq/upgrade": "^1.0.9",
     "moment": "^2.25.1",
     "sails": "^1.2.3",
     "sails-hook-apianalytics": "^2.0.3",
