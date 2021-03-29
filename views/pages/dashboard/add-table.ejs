@@ -1,0 +1,33 @@
+<div id="add-table" v-cloak>
+  <div class="container">
+    <h1>Thêm bàn mới</h1>
+    <ajax-form action="addTable" :syncing.sync="syncing" :cloud-error.sync="cloudError" @submitted="submittedForm()" :handle-parsing="handleParsingForm">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="form-group">
+            <label for="table-name">Tên bàn</label>
+            <input class="form-control" id="table-name" name="table-name" type="text"  :class="[formErrors.name ? 'is-invalid' : '']" v-model.trim="formData.name" placeholder="Tên bàn" autocomplete="name" focus-first>
+            <div class="invalid-feedback" v-if="formErrors.name">Vui lòng nhập tên bàn.</div>
+          </div>
+        </div>
+        <div class="col-sm-12">
+          <div class="form-group">
+            <label for="price">Giá mỗi giờ</label>
+            <input class="form-control" id="price" name="email-address" type="number"  :class="[formErrors.price ? 'is-invalid' : '']" v-model.trim="formData.price" placeholder="5000" autocomplete="price">
+            <div class="invalid-feedback" v-if="formErrors.price">Vui lòng nhập giá cho mỗi giờ</div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="form-group text-right">
+            <a class="btn btn-outline-info" href="/">Cancel</a>
+            <ajax-button type="submit" :syncing="syncing" class="btn btn-dark">Thêm bàn</ajax-button>
+          </div>
+        </div>
+      </div>
+    </ajax-form>
+  </div>
+
+</div>
+<%- /* Expose server-rendered data as window.SAILS_LOCALS :: */ exposeLocalsToBrowser() %>
