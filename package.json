@@ -35,7 +35,7 @@
   "main": "app.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/huuminh/billiards.git"
+    "url": "https://github.com/minhlaobao/billiards.git"
   },
   "author": "huuminh",
   "license": "",
