@@ -115,9 +115,15 @@ parasails.registerPage('welcome', {
       let dur = moment.duration(stopTime.diff(startTime));
 
       var tbPrice = parseInt(cData.price, 10);
-      let hPrice = dur.get('hours') * tbPrice;
+      let hPrice = parseInt(dur.get('hours'), 10) * tbPrice;
       let mPrice = (dur.get('minutes') / 60) * tbPrice;
-      let totalTimePrice = this.calculatePrice(hPrice + mPrice);
+      let tPrice = Math.ceil(hPrice + mPrice);
+
+
+      if(tPrice < 1000) {
+        tPrice = 1000;
+      }
+      let totalTimePrice = this.calculatePrice(tPrice);
       this.checkoutData.timePrice = totalTimePrice;
 
       var sPrice = 0;
@@ -206,6 +212,7 @@ parasails.registerPage('welcome', {
     },
 
     calculatePrice: function(price) {
+       console.log(price);
       var p1 = Math.ceil(parseFloat(price));
 
       p1 = parseFloat(new Intl.NumberFormat('vi-VN').format(p1));
@@ -220,6 +227,8 @@ parasails.registerPage('welcome', {
       } else {
         price = p1;
       }
+
+      console.log(price);
       //price = new Intl.NumberFormat('vi-VN', {currency: 'VND'}).format(price * 1000);
       return price * 1000;
     },

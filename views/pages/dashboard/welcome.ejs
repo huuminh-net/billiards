@@ -53,12 +53,13 @@
       <h2 class="modal-title text-uppercase">PHIẾU THANH TOÁN - {{checkoutData.name}}</h2>
       <button type="button" class="modal-close-button" data-dismiss="modal" aria-label="Close"></button>
     </div>
-    <div class="modal-header print-view">
-      <h2 class="modal-title text-uppercase">
-        <p class="text-danger ">BILLIARDS WIN</p>
-        <p class="subtitle">PHIẾU THANH TOÁN - {{checkoutData.name}}</p>
+    <div class="modal-header bill-header print-view">
+      <h2 class="modal-title text-uppercase text-center">
+        BILLIARDS WIN
       </h2>
-      <button type="button" class="modal-close-button no-print" data-dismiss="modal" aria-label="Close"></button>
+      <p class="mt-0 mb-2">Địa chỉ: 229 Quốc Lộ 9 - Lao Bảo <br /> SĐT: 0985.455.123</p>
+      <h3 class="subtitle text-center">PHIẾU THANH TOÁN - {{checkoutData.name}}</h3>
+      <hr />
     </div>
     <div class="modal-body">
       <table class="table table-sm table-bordered">
@@ -72,12 +73,15 @@
         </tr>
         <tr class="">
           <td class="bold">TỔNG</td>
-          <td class="text-right "><span class="total-price bold text-danger ">{{checkoutData.totalPriceFormat}}</span>
+          <td class="text-right "><span class="total-price bold"><h3>{{checkoutData.totalPriceFormat}}</h3></span>
           </td></span></td>
         </tr>
       </table>
     </div>
-    <p class="text-center mt-3 print-view text-muted">CÁM ƠN QUÝ KHÁCH!!!</p>
+    <p class="text-center mt-3 mb-5 pb-5 print-view text-muted">CÁM ƠN QUÝ KHÁCH!!!</p>
+    <p class=" print-view">&nbsp;</p>
+    <p class=" print-view">&nbsp;</p>
+
     <div class="modal-footer no-print">
       <button type="button" class="btn btn-secondary" data-dismiss="modal">ĐÓNG</button>
       <button type="button" v-on:click="submitCheckout" class="btn btn-success"
